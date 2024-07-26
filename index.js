@@ -47,27 +47,27 @@ function Car(
   this.passengerCapacity = passengerCapacity;
   this.currentSpeed = 0;
   this.maxSpeed = maxSpeed;
-}
 
-Car.prototype = {
-  accelerate(speed) {
+  function accelerate(speed) {
     if (this.currentSpeed + speed > this.maxSpeed) {
       this.currentSpeed = this.maxSpeed;
     } else {
       this.currentSpeed += speed;
     }
-  },
-  deaccelerate(speed) {
+  }
+  function deaccelerate(speed) {
     if (this.currentSpeed - speed <= 0) {
       this.currentSpeed = 0;
     } else {
       this.currentSpeed -= speed;
     }
-  },
-  stop() {
+  }
+  function stop() {
     this.currentSpeed = 0;
-  },
+  }
+
 }
+
 
 const user2 = new Car('red', '911', 'Porsche', '3.8', '2', '330');
 console.log(user2);
