@@ -28,6 +28,28 @@ const car = {
   passengerCapacity: 2,
   currentSpeed: 0,
   maxSpeed: 330,
+  
+};
+
+function Car(
+  color,
+  model,
+  brand,
+  engineCapacity,
+  passengerCapacity,
+  currentSpeed,
+  maxSpeed
+) {
+  this.color = color;
+  this.model = model;
+  this.brand = brand;
+  this.engineCapacity = engineCapacity;
+  this.passengerCapacity = passengerCapacity;
+  this.currentSpeed = 0;
+  this.maxSpeed = maxSpeed;
+}
+
+Car.prototype = {
   accelerate(speed) {
     if (this.currentSpeed + speed > this.maxSpeed) {
       this.currentSpeed = this.maxSpeed;
@@ -45,16 +67,10 @@ const car = {
   stop() {
     this.currentSpeed = 0;
   },
-};
-
-function Objects(object) {
-  for (key in object) {
-    this[key] = object[key];
-  }
 }
 
-const user2 = new Objects(user);
+const user2 = new Car('red', '911', 'Porsche', '3.8', '2', '330');
 console.log(user2);
 
-const car2 = new Objects(car);
+const car2 = new Car('blue', 'P1', 'McLaren', '3.5', '2', '300');
 console.log(car2);
