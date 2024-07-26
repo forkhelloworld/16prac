@@ -28,18 +28,9 @@ const car = {
   passengerCapacity: 2,
   currentSpeed: 0,
   maxSpeed: 330,
-  
 };
 
-function Car(
-  color,
-  model,
-  brand,
-  engineCapacity,
-  passengerCapacity,
-  currentSpeed,
-  maxSpeed
-) {
+function Car(color, model, brand, engineCapacity, passengerCapacity, maxSpeed) {
   this.color = color;
   this.model = model;
   this.brand = brand;
@@ -48,29 +39,27 @@ function Car(
   this.currentSpeed = 0;
   this.maxSpeed = maxSpeed;
 
-  function accelerate(speed) {
+  this.accelerate = function(speed) {
     if (this.currentSpeed + speed > this.maxSpeed) {
       this.currentSpeed = this.maxSpeed;
     } else {
       this.currentSpeed += speed;
     }
   }
-  function deaccelerate(speed) {
+  this.deaccelerate = function(speed) {
     if (this.currentSpeed - speed <= 0) {
       this.currentSpeed = 0;
     } else {
       this.currentSpeed -= speed;
     }
   }
-  function stop() {
+  this.stop = function() {
     this.currentSpeed = 0;
   }
-
 }
 
-
-const user2 = new Car('red', '911', 'Porsche', '3.8', '2', '330');
-console.log(user2);
-
-const car2 = new Car('blue', 'P1', 'McLaren', '3.5', '2', '300');
+const car2 = new Car("red", "911", "Porsche", "3.8", "2", "330");
 console.log(car2);
+
+const car3 = new Car("blue", "P1", "McLaren", "3.5", "2", "300");
+console.log(car3);
